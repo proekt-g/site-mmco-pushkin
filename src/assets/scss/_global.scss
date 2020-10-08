@@ -1,0 +1,58 @@
+body {
+    font-family: $default-font;
+    color: $mainColor;
+    font-weight: $mainWeight;
+    font-size: $mainSize;
+    a {
+        color: $mainColor;
+        font-weight: $mainWeight;
+        font-size: $mainSize;
+        transition: 0.3s;
+    }
+    img {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.block {
+    overflow: hidden;
+}
+.main {
+    min-height: $minHeightMain;
+}
+
+.container {
+    max-width: calc(#{$content-width} + 20px);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    @media (max-width: 900px) {
+        padding: 0 32px;
+    }
+    @media (max-width: 500px) {
+        padding: 0 20px;
+    }
+}
+.button {
+    border-radius: 50px;
+    background-color: $mainColor;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0 35px;
+    @media (max-width: 500px) {
+        display: block;
+    }
+    &:hover {
+        background-color: var(--ui-color);
+        color: #fff;
+    }
+    &--white {
+        background-color: #ffffff;
+        color: $mainColor;
+    }
+}
