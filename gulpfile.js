@@ -34,7 +34,11 @@ gulp.task("scss", function () {
 })
 gulp.task("js-libs", function () {
     return gulp
-        .src(["node_modules/simple-parallax-js/dist/simpleParallax.min.js"])
+        .src([
+            "node_modules/simple-parallax-js/dist/simpleParallax.min.js",
+            "node_modules/overlayscrollbars/js/OverlayScrollbars.min.js",
+            "node_modules/swiper/swiper-bundle.min.js",
+        ])
         .pipe(concat("_libs.js"))
         .pipe(gulp.dest("src/assets/js"))
 })
