@@ -1,9 +1,3 @@
-// document.onreadystatechange = function() {
-//     if (document.readyState === "interactive") {
-
-//     }
-// }
-
 $(window).on("load", () => {
     // variables
     // /variables
@@ -174,6 +168,37 @@ $(window).on("load", () => {
             },
         },
     })
-    new simpleParallax(document.getElementsByClassName("thumbnail"))
+    new simpleParallax(document.getElementsByClassName("concept__bg-img"), {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)' 
+    })
+    document.querySelectorAll('.head__img--left').forEach((item) => {
+        new simpleParallax(item, {
+            delay: .6,
+        	transition: 'cubic-bezier(0,0,0,1)' ,
+            orientation: 'right',
+            overflow: true
+        })
+    })
+    document.querySelectorAll('.head__img--right').forEach((item) => {
+        new simpleParallax(item, {
+            delay: .6,
+        	transition: 'cubic-bezier(0,0,0,1)' ,
+            orientation: 'left',
+            overflow: true
+        })
+    })
+    new simpleParallax(document.getElementsByClassName("header__img"), {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)' ,
+        orientation: 'left',
+        overflow: true
+    })
+    if(!localStorage.getItem('first-requery')) {        
+        scrollEmulation()
+        $(".modal-overlay").toggleClass(`modal-overlay--active`)
+        $(`.modal__concept`).toggleClass(`modal--active`)
+        localStorage.setItem('first-requery', 'false')
+    }
     // /Page load
 })
